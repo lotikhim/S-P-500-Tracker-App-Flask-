@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="tr table-responsive">
+    <tr>
+        <td class="h1" style="background-color: #f1f1f1;margin: 2px;;line-break: auto;">
+            <div class="content_title" style="border: 10px;">
+                <h1>{% block title %} Contact Us {% endblock %}</h1>
+                <div class="content_subtitle" style="border: 2px dotted rgba(0, 136, 86, 0.717);">
+                    <h4 style="word-break: keep-all;font-weight: bold;"> Feel free to contact us via email or phone. We will be happy to hear your voice!
+                        <br>
+                        Please also let us know any function you wanted! We can try to make it for you. 
+                    </h4>       
+                    <h5> Email: 1234@gmail.com</h5>
+                    <h5> Phone: 1234 5678</h5>
+                    
+                    <a style="font-size: medium;" href ="{{ url_for ('index') }}">Back </a>
+                </div>
+            </div>
+        </td>
+    </tr>
+            
+{% endblock %}

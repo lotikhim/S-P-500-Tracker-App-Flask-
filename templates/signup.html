@@ -1,0 +1,39 @@
+{% extends 'base_login and signup.html' %}
+
+{% block content %}
+<table class="tr table-responsive">
+    <tr>
+        <td class="h1" style="background-color: #f1f1f1; word-break: keep-all;">
+            <div class="content_title" >
+                <h1>{% block title %} Register Here! {% endblock %}</h1>
+                <h2 class="content_subtitle">Already have an account? 
+                <a href ="{{ url_for ('index') }}">Log in here</a></h2>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" >
+                <div class="gen_container">
+                    <label for="user_name"><b>User Name</b></label>
+                    <br>
+                    <input type="text" name="user_name" placeholder="User Name" required>
+                    <br>
+                    <label for="pass_word"><b>Password</b></label>
+                    <br>
+                    <input type="password" name="pass_word" placeholder="Password" required>
+                    <br>
+                    <label for="email"><b>Email</b></label>
+                    <br>
+                    <input type="text" name="email" placeholder="Email" required>
+                    <br>
+                    <button type="submit">submit</button>
+                </div>
+            </form>
+        </td>
+    </tr>
+
+</table>
+
+
+{% endblock %}

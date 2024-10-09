@@ -1,0 +1,45 @@
+
+#venv means virtual environment
+#kick on the venv
+
+cd ~/
+mkdir myproject
+cd myproject\
+(file folder path) -m venv venv 
+py  -m venv venv #can use this one
+Set-ExecutionPolicy Unrestricted -Scope Process
+.\venv\Scripts\activate
+
+#downloading flask module
+py -m pip install flask
+pip install -U Flask-SQLAlchemy
+$env:FLASK_ENV = "development"
+
+py -m pip install pandas
+py -m pip install bs4
+py -m pip install yfinance
+py -m pip install matplotlib
+py -m pip install pytz
+py -m pip install fake_useragent
+
+
+Crtl + C → cancel
+Up arrow → Previous command
+
+https://devs.tw/post/448
+
+https://pixnashpython.pixnet.net/blog/post/45897919-%E3%80%90flask%E3%80%91%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88%E6%95%99%E5%AD%B8(%E4%B8%80)%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%90%AD
+
+https://ithelp.ithome.com.tw/articles/10258223
+
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install flask
+pip install -U Flask-SQLAlchemy
+$env:FLASK_ENV = "development"
+
+python3 -m pip install pandas
+python3 -m pip install bs4
+python3 -m pip install yfinance
+python3 -m pip install matplotlib
+python3 -m pip install pytz

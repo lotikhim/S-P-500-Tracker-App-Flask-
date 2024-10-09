@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="image-wrapper">
+  <h1 class="header">S&P 500 (5 Year Chart)</h1>
+  <img src="/static/image/S&P 500.png" width="1000" height="500" alt="Image Description">
+</div>
+<div class="container">
+  <div class="table-wrapper ">
+    <h1>{% block title %} Top 20 Gainers {% endblock %}</h1>
+    <table>
+      <tr>
+        <th>Ticker</th>
+        <th>Open</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Close</th>
+        <th>Volume</th>
+        <th>% Change</th>
+      </tr>
+      {% for i in range(20) %}
+      <tr onclick="window.location.href = 'stock/{{ gainers.iloc[i, 5] }}';">
+        <td class="highlight-blue">{{ gainers.iloc[i, 5] }}</td>
+        <td>{{ gainers.iloc[i, 0] }}</td>
+        <td>{{ gainers.iloc[i, 1] }}</td>
+        <td>{{ gainers.iloc[i, 2] }}</td>
+        <td>{{ gainers.iloc[i, 3] }}</td>
+        <td>{{ gainers.iloc[i, 4] }}</td>
+        <td class="gainers">{{ gainers.iloc[i, 6] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="table-wrapper">
+    <h1>Top 20 Losers</h1>
+    <table>
+      <tr>
+        <th>Ticker</th>
+        <th>Open</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Close</th>
+        <th>Volume</th>
+        <th>% Change</th>
+      </tr>
+      {% for i in range(20) %}
+      <tr onclick="window.location.href = 'stock/{{ losers.iloc[i, 5] }}';">
+        <td class="highlight-blue">{{ losers.iloc[i, 5] }}</td>
+        <td>{{ losers.iloc[i, 0] }}</td>
+        <td>{{ losers.iloc[i, 1] }}</td>
+        <td>{{ losers.iloc[i, 2] }}</td>
+        <td>{{ losers.iloc[i, 3] }}</td>
+        <td>{{ losers.iloc[i, 4] }}</td>
+        <td class="losers">{{ losers.iloc[i, 6] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

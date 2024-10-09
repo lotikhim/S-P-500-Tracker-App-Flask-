@@ -1,0 +1,290 @@
+/* Control of background */
+body {
+    background: linear-gradient(to left, rgb(165, 165, 165), hwb(0 100% 0%)); /* Gradient background */
+    font-family: Arial, sans-serif;
+}
+
+/* Bordered form */
+form {
+    border: 3px solid rgba(255, 255, 255, 0.845);
+}
+
+.title {
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 2px;
+    line-height: 25%;
+    padding-right: 0%;
+}
+
+/* For Nav Bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-content: baseline;
+}
+
+li {
+    font-size: 1.5em;
+    margin: 0.03px;
+    line-height: 50%;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    border-radius: 5px;
+    background-color: rgb(0, 136, 86);
+}
+
+nav {
+    padding: 1px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.8em;
+}
+
+.navbar {
+    font-size: 1em;
+    text-size-adjust: auto;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+}
+
+.search-form {
+    border: none;
+    width: fit-content;
+    margin-bottom: 0;
+}
+
+.post {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #008856;
+}
+
+/* Login, Sign Up Full width input field */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid hsl(0, 0%, 91%);
+    box-sizing: border-box;
+}
+
+/* Set a style for the login button */
+button {
+    background-color: rgba(0, 136, 86, 0.717);
+    font-size: 16px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+.searchbtn{
+    background-color: rgba(0, 136, 86, 0.717);
+    font-size: 16px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: fit-content;
+}
+/* Stlye for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Container style for general use (nearest non-static parent container)*/
+.gen_container {
+    position: relative;
+    padding: 12px;
+}
+
+/*  */
+.gen_container a:last-child {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content_title {
+    padding: 5px;
+    margin: 1px;
+    line-height: 1.5rem;
+    font-variation-settings: "wght" 500;
+}
+
+.content_subtitle {
+    width: 100%;
+    padding: 5px;
+    line-height: 1.5rem;
+    font-variation-settings: "wght" 500;
+    color: hsl(0, 0%, 35%);
+    box-sizing: border-box;
+    
+}
+
+.nav-content {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#god-floating-table {
+    margin: 0%;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background-color: white;
+    font-size: smaller;
+    padding: 0px;
+    margin: none;
+    border: none;
+    width: fit-content;
+    line-height: normal;
+    
+}
+
+#god-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+/* Add hover effect for buttons */
+#god-button:hover {
+    opacity: 0.8;
+}
+
+.h1 {
+    line-height: 0.9%;
+    width: 30%;
+    padding: 16px 10px 10px;
+    margin: 5px;
+}
+
+.tr {
+    line-height: normal;
+}
+
+h4 {
+    line-height: 1rem;
+}
+
+h5 {
+    line-height: 0.5rem;
+    color: rgba(0, 136, 86, 0.717);
+}
+
+/* Homepage */
+.table-wrapper {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    
+    overflow: auto;
+   
+    margin: 0 auto;
+  }
+  
+  .container {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;/*#Center the content*/
+    border: 1px solid black;
+
+  }
+
+  tr:not(:first-child):hover {
+    background-color: #9cafae; /* Change the background color on hover for rows except the first row */
+    cursor: pointer;
+  }
+
+  .image-wrapper img {
+    display: block; /* Ensures the image is centered properly */
+    margin: 0 auto; /* Added to center the image horizontally */
+    border: 2px solid black; /* Specify the border style */
+    padding: 0; /* Add padding to create space around the image */
+  }
+
+  .header { /*header for s&p chart*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Highlight ticker symbol on homepage */
+  .highlight-blue {
+    color: blue
+  }
+
+  /* Highlight gainers and losers on homepage */
+  .highlight-blue {
+    color: blue
+  }
+
+  .gainers{
+    color: rgb(38, 145, 43)
+  }
+
+  .losers{
+    color: rgb(201, 23, 23)
+  }
+@media screen and (max-width: 200px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+    .navbar-nav .nav-link {
+        flex-direction: column;
+        padding-right: 5rem;
+        padding-left: 5rem;
+    }
+}

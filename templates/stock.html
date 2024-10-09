@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Today - {% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    
+    <style>
+        /* For Nav Bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-content: baseline;
+}
+
+li {
+    font-size: 1.5em;
+    margin: 0.03px;
+    line-height: 50%;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    border-radius: 5px;
+    background-color: rgb(0, 136, 86);
+}
+
+nav {
+    padding: 1px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.8em;
+}
+
+.navbar {
+    font-size: 1em;
+    text-size-adjust: auto;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+}
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+        .form-control {
+            width: 40%;
+        }
+    
+        .centered {
+            text-align: center;
+            margin: 0 auto; /* Center the container horizontally */
+            display: inline-block; /* Ensure centering even when resized */
+        }
+        table {
+            
+            width: 100%;
+            border: 1px solid black;
+            
+        }
+        .table-container {
+            width: 40%;
+            max-width: 1000px; /* Set a max-width to limit the table width */
+            
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 20px; /* Add padding for better visibility */
+            display: inline-block; /* Ensure centering even when resized */
+        }
+        .table-container-2 {
+            width: 100%;
+            max-width: 1000px; /* Set a max-width to limit the table width */
+            
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 20px; /* Add padding for better visibility */
+            display: inline-block; /* Ensure centering even when resized */
+        }
+        th, td {
+            
+            padding: 2px;
+            text-align: center;
+            
+        }
+
+        td:first-child {
+        font-weight: bold; /* Make text in first column cells bold */
+    }
+    
+    .hover-link {
+        cursor: pointer;
+        text-decoration: underline;
+        
+    }
+    .hover-link:hover {
+        background-color: #9cafae;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light gray background for even rows */
+        }
+    </style>
+
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <h1 class="title">S&P 500 Tracker</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url_for('homepage') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url_for('contact_us') }}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url_for('account') }}">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">Log Out</a>
+                    </li>
+                    
+                </ul>
+                <form class="d-flex search-form" role="search" action="{{ url_for('search') }}" method="post">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success" type="submit" style="width: fit-content;background-color: rgba(0, 136, 86, 0.717);color: white;">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <hr/>
+    {% for message in get_flashed_messages() %}    
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+
+</head>
+    <body>
+
+        <div class="centered">
+            <img src="{{ url_for('static', filename='image/' + ticker + '.png') }}" width="1000" height="500">
+            <div class="table-container">
+                <table>
+                    <h1 class="header"><a href="{{ link }}">{{ longname }}</a></h1>
+                    <tbody>
+                        {% for key, value in data[0].items() %}
+                        
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        
+    
+        <div class="table-container-2">
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Title</th>
+                </tr>
+                {% for news_item in news_dicts %}
+                <tr class="hover-link"onclick="window.location.href = '{{ news_item['URL']}}';">    
+                    
+                    <td>{{ news_item['Date'] }}</td>
+                    <td>{{ news_item['News'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+   
+    
+    </body>
+    </html>
+</html>

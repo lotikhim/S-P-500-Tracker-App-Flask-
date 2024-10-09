@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/style.css"> 
+    <style>
+        .alert{
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title" style="padding-top: 50px;font-size: 5em;">S&P 500 Tracker</h1>
+    <form method="POST">
+        <div class="gen_container">
+            <label for="uname"><b>User Name</b></label>
+
+            <input type="text" placeholder="Enter Username" name="user_name" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pass_word" required>
+            <button type="submit">Login</button>
+            <!-- <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label> -->
+        </div>
+        <div class="gen_container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <a href ="{{ url_for ('signup') }}"> New to here? Register for a free account.</a>
+            <a href="{{ url_for ('forgot_password') }}">Forgot password?</a>
+        </div>
+    </form>
+    
+    {% for message in get_flashed_messages() %}    
+        <div class="alert">{{ message }}</div>
+        {% endfor %}
+
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

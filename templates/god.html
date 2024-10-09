@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}ADMIN page{% endblock %}
+
+{% block content %}
+    <h1 style="padding-left: 10px; margin-left: 10px;">ADMIN page</h1>
+
+    {% for account in accounts %}
+    <div class="post" style="padding: 5px; margin: 5px;">
+        <p>This account created in: {{ account['created'] }}</p>
+        <p>User Name:  {{ account['user_name'] }}</p>
+        <p>Password:   {{ account['pass_word'] }}</p>
+        <p>Email:   {{ account['email'] }}</p>
+        <p>User ID:   {{ account['id'] }}</p>
+        <form action="{{ url_for('delete') }}" method="POST" style="border: none;">
+            <input type="hidden" name="user_name" value="{{ account['user_name'] }}">
+            <input class="god-button" type="submit" value="Delete" 
+            onclick="return confirm('Are you sure you want to delete this post?')">
+        </form>
+    </div>
+    {% endfor %}
+
+    <div id="god-floating-table">
+        <form method="post" >
+            <div class="gen_container">
+                <label for="user_name"><b>User Name</b></label>
+                <br>
+                <input type="text" name="user_name" placeholder="User Name" required>
+                <br>
+                <label for="pass_word"><b>Password</b></label>
+                <br>
+                <input type="password" name="pass_word" placeholder="Password" required>
+                <br>
+                <label for="email"><b>Email</b></label>
+                <br>
+                <input type="text" name="email" placeholder="Email" required>
+                <br>
+                <input class="god-button" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+{% endblock %}
