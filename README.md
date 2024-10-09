@@ -8,11 +8,11 @@ The data used is as of July 2024, covering 50 stocks. You can easily scale this 
 - Historical stock data visualization through charts highlighting 50% or 75% retracements.
 
 ## File Structure
-app.py: Main Flask application file.
-last_price.py, plot.py, news.py, info.py: Scripts for data retrieval and visualization.
-templates/: HTML templates for the application.
-static/: CSS and JavaScript files.
-image/: Folder for storing generated charts.
+- app.py: Main Flask application file.
+- last_price.py, plot.py, news.py, info.py: Scripts for data retrieval and visualization.
+- templates/: HTML templates for the application.
+- static/: CSS and JavaScript files.
+- image/: Folder for storing generated charts.
 
 ## Installation
 1.Clone the repository:
