@@ -72,20 +72,6 @@ def index():
 
     return render_template('index.html')
 
-def select_all(user_name):
-    conn = get_db_connection()
-    accounts = conn.execute('SELECT * FROM accounts WHERE user_name =?',
-    (user_name,)).fetchall()
-    conn.close()
-    return accounts
-
-def select_all(user_name):
-    conn = get_db_connection()
-    accounts = conn.execute('SELECT * FROM accounts WHERE user_name =?',
-    (user_name,)).fetchall()
-    conn.close()
-    return accounts
-
 def select_all_by_email(email):
     conn = get_db_connection()
     accounts = conn.execute('SELECT * FROM accounts WHERE email =?',
